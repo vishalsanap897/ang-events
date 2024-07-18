@@ -1,0 +1,77 @@
+<!-- <h1>{{title}}</h1>
+<div class="center">
+<button (click)="getData('hello')">Call functions</button>
+<br><br>
+<input type="text" #id (keydown)="getData(id.value)" placeholder="event keydown">
+<br><br>
+<input type="text" #id1 (blur)="getData(id1.value)" placeholder="event blur">
+<br><br>
+<input type="text" #id2 (change)="getData(id2.value)" placeholder="event change ">
+<br><br>
+<input type="text" #id3 (keyup)="getData(id3.value)" placeholder="event keyup">
+<br><br>
+<input type="text" #id4 (focus)="getData(id4.value)" placeholder="event focus">
+<br><br>
+<input type="text" #id5 (cut)="getData(id5.value)" placeholder="event cut">
+<br><br>
+<input type="text" #id6 (copy)="getData(id6.value)" placeholder="event copy">
+<br><br>
+<input type="text" #id7 (dblclick)="getData(id7.value)" placeholder="event dblclick">
+<br><br>
+<input type="text" #id8 (keypress)="getData(id8.value)" placeholder="event keypress">
+<br><br>
+<input type="text" #id9 (mousedown)="getData(id9.value)" placeholder="mousedown event">
+<br><br>
+<input type="text" #id10 (mouseenter)="getData(id10.value)" placeholder="mouseenter event">
+<br><br>
+<input type="text" #id11 (mouseover)="getData(id11.value)" placeholder="mouseover event">
+</div>
+ -->
+
+
+
+    <form [formGroup]="loginForm" class="m">
+
+        <div class="container">
+
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+        
+            <div class="panel"></div>
+        
+        </div>
+        <div style="text-align: center;">
+        <h1 style="margin-bottom: 10px;">introduction</h1>
+
+        <input type="text" placeholder="enter your name" pattern="[a-zA-Z]+$" formControlName="name"><br>
+        <span style="color: red;" *ngIf="name && name.invalid && name.touched">enter your valid name</span><br><br>
+        <input type="password" plcaeholder="enter your password" formControlName="password"><br>
+        <span style="color: red;" *ngIf="password && password.invalid && password.touched">enter your valid
+            password</span><br><br>
+        <button [disabled]="loginForm.invalid" type="submit" (click)="submit()">set</button>
+        <button type="reset" (click)="reset()">reset</button>
+
+
+
+    </div>
+
+    </form>
+
+
+
+<div *ngIf="isShow" class="a">
+
+    <h3 style="color:black">pop-up<span style="color: brown;">Bar</span> </h3><br>
+    <!-- <button (click)="reset()" class="btn btn-primary"> cansel</button> -->
+    <button (click)="ok()" class="btn btn-secondary ml-3"> ok</button>
+
+
+</div>
+
+
+
+
+<app-bounce></app-bounce>
